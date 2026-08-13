@@ -1,6 +1,6 @@
 # 🖥️ [Nombre de la máquina]
 
-**Plataforma:** HTB / THM / ...
+**Plataforma:** HTB / THM
 **Dificultad:** Easy / Medium / Hard
 
 ---
