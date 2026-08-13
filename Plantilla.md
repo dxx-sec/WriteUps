@@ -2,7 +2,6 @@
 
 **Plataforma:** HTB / THM / ...
 **Dificultad:** Easy / Medium / Hard
-**IP:** `10.10.X.X`
 
 ---
 
