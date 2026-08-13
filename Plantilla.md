@@ -95,4 +95,3 @@ find / -perm -4000 -type f 2>/dev/null
 * **Aprendí:** [Conceptos]
 * **Herramientas:** [Nmap, FFUF, etc.]
 * **Comandos nuevos:** `[comando]`
-* **Tengo que estudiar:** [Concepto]
