@@ -65,8 +65,7 @@ Esto permite acceder al panel sin conocer la contraseña.
 
 ## 5. Flags / Evidencias
 
-* Acceso al panel de administración conseguido.
-* [Añadir aquí la flag o evidencia obtenida posteriormente.]
+* Acceso a la flag.
 
 ---
 
