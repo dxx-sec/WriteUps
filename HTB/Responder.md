@@ -327,23 +327,7 @@ Por eso no importa que nuestra máquina sea Linux.
 
 ## 4. ⬆️ Escalada de privilegios
 
-En este caso conseguimos autenticarnos directamente como:
-
-```text
-administrator
-```
-
-Por tanto, antes de buscar una escalada de privilegios debemos comprobar qué nivel de privilegios tenemos:
-
-```powershell
-whoami
-```
-
-```powershell
-whoami /groups
-```
-
-Si el usuario `Administrator` tiene privilegios administrativos, no necesitamos realizar una escalada adicional para obtener acceso privilegiado.
+En este caso nos autentica como administrador y buscamos la flag en el directorio de usuarios de mike.
 
 ---
 
