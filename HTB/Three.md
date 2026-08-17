@@ -214,25 +214,9 @@ Obteniendo así una **reverse shell** sobre el servidor.
 
 ## 4. ⬆️ Escalada de privilegios
 
-### Enumeración
 
-<Continuar aquí con la enumeración del sistema una vez obtenida la reverse shell.>
+- No hay escalada de privlegios simplemente voy al directorio var/www y pillo la flag.txt
 
-```bash
-whoami
-id
-sudo -l
-```
-
-### Vector de escalada
-
-<Documentar aquí el método utilizado para conseguir privilegios elevados.>
-
-### Explotación
-
-```bash
-<comando>
-```
 
 ---
 
