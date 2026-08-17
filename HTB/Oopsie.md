@@ -358,41 +358,7 @@ Por ejemplo:
 
 La `s` en lugar de la `x` indica que el bit SUID está activo.
 
-### Vector de escalada
-
-<Continuar aquí con la enumeración del binario SUID encontrado y determinar cómo puede utilizarse para obtener privilegios de root.>
-
-```bash
-ls -la <archivo>
-```
-
-```bash
-file <archivo>
-```
-
-```bash
-strings <archivo>
-```
-
-### Explotación
-
-<Documentar aquí el comando utilizado para explotar el binario SUID y obtener una shell como root.>
-
-```bash
-<comando>
-```
-
-Comprobamos:
-
-```bash
-whoami
-```
-
-Resultado esperado:
-
-```text
-root
-```
+- Con el usuario robert ejecutamos el binario por que tiene permisos SUID en el grupo que está configuramos lo que nos pide y listo root y la flag.
 
 ---
 
