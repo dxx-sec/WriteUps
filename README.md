@@ -5,4 +5,4 @@
 &nbsp;
 &nbsp;
 
-**2. Ruta para THM WriteUps** &nbsp;&nbsp; → &nbsp;&nbsp; [![THM](https://img.shields.io/badge/THM-WriteUps-red?style=for-the-badge&logo=tryhackme&logoColor=white)](#)
+**2. Ruta para THM WriteUps**&nbsp;&nbsp; → &nbsp;&nbsp; [![THM](https://img.shields.io/badge/THM-WriteUps-red?style=for-the-badge&logo=tryhackme&logoColor=white)](#)
