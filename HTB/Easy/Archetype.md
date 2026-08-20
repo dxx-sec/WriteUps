@@ -1,0 +1,11 @@
+# Archetype
+- Lanzamos escaneo nmap10.129.95.187
+- smbclient -l 10.129.95.187 y luego entrmaos smbclient -N //10.129.95.187/backups
+- pillamos el archivo y son credenciales de windows/da para microsoft server.
+- accedemos explotamos el xp_cmdshell y realizamos comandos -> reverse shell y nos conectamos a la máquina.
+- servimos web server y le pasamos winpeas para escalar privilegios no encontramos nada.Reviso log de powershell y privilegios del usuario.
+- Se encuentra credenciales de admin.
+- sudo apt install python3-impacket para poder ejecutar -> impacket-psexec administrator@10.129.95.187 PONEMOS credenciales.
+- Ejecutamos whoami -> authority (admin) vamos a ruta de user desktop pillamos flag
+- Vamos a la ruta de administrator desktop -> type root.txt  y tenemos root flag.
+- Aprendido Winpeasx64 y impacket-psexec para tener un cmd privilegado 
