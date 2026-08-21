@@ -148,7 +148,7 @@ SuperSecureCraft123Pass!
 - Encontramos el usuario:
 
 ```text
-admin
+adam
 ```
 
 - También encontramos:
