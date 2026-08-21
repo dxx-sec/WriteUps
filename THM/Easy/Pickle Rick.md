@@ -1,4 +1,5 @@
 # Pickle Rick
+-- THM 
 - 10.130.188.88
 - puerto ssh 22 y 80 http
 - fuzzeamos -> index.html y robots.txt /
