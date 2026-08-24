@@ -1,6 +1,6 @@
-# Room 404 — HTB
+# Room 404 — THM
 
-**Plataforma:** Hack The Box  
+**Plataforma:** Try Hack Me
 **Dificultad:** Fácil  
 **Categoría:** Web / Git / Information Disclosure
 
