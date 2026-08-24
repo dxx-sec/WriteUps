@@ -1,6 +1,6 @@
 # Room 404 — THM
 
-**Plataforma:** Try Hack Me
+**Plataforma:** TryHackMe
 **Dificultad:** Fácil  
 **Categoría:** Web / Git / Information Disclosure
 
