@@ -5,4 +5,7 @@
 - 22 -> ssh / 80 -> http / 443 -> https
 - Si entramos mediante http -> http://connected.htb/ redirige a esto, vamoss a añadirlo a nuestro dns local de la máquina para que resuelva el dns.
 - sudo nano /etc/hosts -> 10.129.112.183 connected.htb
+- http://connected.htb/admin/config.php nos trae al archivo de configuración de admin un panel.
+- veo una key suelta einqgiq5d4gccva8rk0rg6pafs la guardo.
+- FreePBX 16.0.40.7 es una gui permite gestionar telefonia ip. ( tenemos la versión :) )
 - 
