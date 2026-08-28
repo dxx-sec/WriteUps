@@ -1,4 +1,4 @@
-# Billing — THM
+# Billing
 
 **Plataforma:** TryHackMe  
 **Dificultad:** Fácil  
