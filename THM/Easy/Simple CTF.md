@@ -1,4 +1,4 @@
-# Simple CTF — THM
+# Simple CTF
 
 **Plataforma:** TryHackMe  
 **Dificultad:** Fácil  
