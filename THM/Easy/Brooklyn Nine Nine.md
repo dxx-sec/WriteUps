@@ -114,6 +114,9 @@ exiftool brooklyn99.jpg
 
 - No encontramos ninguna información útil mediante este análisis.
 
+- POST -> Era con la herramienta stegseek -> stegseek es una herramienta para extraer información oculta mediante esteganografía, principalmente de imágenes JPEG que usan Steghide.
+- Y Te daba otro usuario llamado holt y su pw ( en una nota .out )[i] Found passphrase: "admin" [i] Original filename: "note.txt". [i] Extracting to "brooklyn99.jpg.out".
+
 ### Fuerza bruta SSH
 
 - Como tenemos el usuario `jake` y una pista que indica que su contraseña es débil, probamos un ataque de diccionario contra SSH:
