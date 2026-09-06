@@ -3,6 +3,10 @@
 - 10.128.182.117
 - nmap -sCV -Pn 10.128.182.117
 - 21 ftp anonymous , 22ssh, 80http
-- pillamos dos archivos con ftp anonymous
+- pillamos dos archivos con ftp anonymous (task escrita por lin y locks.txt que parece un listado de contraseñas para hacer fuerza bruta)
 - Spike,Jet,Edward,Ed,Ein,Faye parece faye el que quiere acceder y dicen que puede
 - ffuf -u http://10.128.182.117/FUZZ -w /usr/share/seclists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt
+- Reinicio máquina que iba fatal -> 10.128.160.231 > fuzzeo no saco nada solo index.html.
+- Pruebo a hacer fuerzabruta ssh con el listado de antes a los diferentes usuarios.
+- hydra -l lin -P locks.txt ssh://10.128.160.231 -> sacamos password
+- conectamos ssh lin@ip -> password -> export TERM=xterm para tener una buena tty interactuable.
