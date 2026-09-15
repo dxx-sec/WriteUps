@@ -38,3 +38,5 @@ Agent R
    7 │ Your buddy,
    8 │ chris
 
+- habria q ver la otra foto dado a que es un .png
+- ssh james@10.128.166.133 y contraseña listo estamos dentro
