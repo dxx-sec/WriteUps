@@ -40,3 +40,4 @@ Agent R
 
 - habria q ver la otra foto dado a que es un .png
 - ssh james@10.128.166.133 y contraseña listo estamos dentro
+- Pillamos flag y nos enviamos con scp una imagen le aplicamos stegseek y vemos que el nombre de l aimagen es Roswell alien autopsy
